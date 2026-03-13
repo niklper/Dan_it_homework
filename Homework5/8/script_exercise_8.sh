@@ -1,7 +1,19 @@
 #!/bin/bash
 
-read -p "Enter the file path? which need to copy - " PATH1
-read -p "Enter the path where need to paste the file - " PATH2
+NUMB=$1
 
+if [[ -z "$NUMB" || "$NUMB" == 0 ]]; then
+        echo "You havent entered anything"
+else
+        for (( i=1; i <= "$NUMB"; i++ ))
+        do
+                read -p "Enter $i fruit:" MASS[i]
+        done
 
-cp $PATH1 $PATH2
+        echo "List of fruits:"
+
+                for (( i=1; i <= "$NUMB"; i++ ))
+        do
+                echo "$i - " ${MASS["$i"]}
+        done
+fi
