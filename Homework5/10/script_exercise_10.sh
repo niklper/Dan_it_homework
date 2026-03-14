@@ -36,5 +36,6 @@
 #Не смог разобраться 
 FILE_NAME=find /watch -mmin -1 -ls | sed -n '2,$p' | awk '{print $11}'
 echo "$FILE_NAME"
+cat "$FILE_NAME"
 mv "$FILE_NAME" "${FILE_NAME%.txt}.back"
 #mv "$FILE_NAME" "$FILE_NAME".back
