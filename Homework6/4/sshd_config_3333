@@ -1,0 +1,42 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+# When systemd socket activation is used (the default), the socket
+# configuration must be re-generated after changing Port, AddressFamily, or
+# ListenAddress.
+#
+# For changes to take effect, run:
+#
+#   systemctl daemon-reload
+#   systemctl restart ssh.socket
+#
+Port 3333
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Ciphers and keying
+#RekeyLimit default none
+
+# Logging
+#SyslogFacility AUTH
+#LogLevel INFO
+
+# Authentication:
+
+PasswordAuthentication yes
+#AllowUsers john server
+
+#LoginGraceTime 2m
+#PermitEmptyPasswords no
+PermitRootLogin no
+ChallengeResponseAuthentication no
+#StrictModes yes
+MaxAuthTries 3
+#MaxSessions 10
+
+PubkeyAuthentication yes
+
