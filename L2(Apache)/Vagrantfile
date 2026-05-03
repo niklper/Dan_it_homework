@@ -1,0 +1,26 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/focal64"
+
+  # Common provider config
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 1024
+    vb.cpus = 2
+  end
+
+  # VM 1 - Apache
+  config.vm.define "vm-apache-1" do |apache1|
+    apache1.vm.hostname = "vm-apache-1"
+    apache1.vm.network "public_network"
+  end
+
+ config.vm.define "vm-apache-2" do |apache1|
+    apache1.vm.hostname = "vm-apache-2"
+    apache1.vm.network "public_network"
+  end
+
+  # VM 2 - Nginx Load Balancer
+  config.vm.define "vm-nginx" do |nginx|
+    nginx.vm.hostname = "vm-nginx"
+    nginx.vm.network "public_network"
+  end
+end
