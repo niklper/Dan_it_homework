@@ -1,0 +1,55 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+
+  DB_USER = ENV['DB_USER']
+  DB_PASS = ENV['DB_PASS']
+  DB_NAME = ENV['DB_NAME']
+
+# Configuration APP_VM
+  config.vm.define "APP_VM" do |app|
+    app.vm.box = "ubuntu/jammy64"
+    app.vm.hostname = "APP.VM"
+
+    app.vm.provider "virtualbox" do |vb|
+      vb.memory = "1536"
+      vb.cpus = 2
+    end
+
+    app.vm.network "private_network", ip: "192.168.30.10"
+
+    app.vm.provision "shell", path: "provision/APP.sh", env: {
+      "DB_HOST" => "192.168.30.11",
+      "DB_PORT" => "3306",
+      "DB_NAME" => ENV['DB_NAME'],
+      "DB_USER" => ENV['DB_USER'],
+      "DB_PASS" => ENV['DB_PASS']
+    }
+  end
+
+  # Configuration DB_VM
+  config.vm.define "DB_VM" do |db|
+    db.vm.box = "ubuntu/jammy64"
+    db.vm.hostname = "DB.VM"
+
+    db.vm.provider "virtualbox" do |vb|
+      vb.memory = "1536"
+      vb.cpus = 2
+    end
+
+    db.vm.network "private_network", ip: "192.168.30.11"
+
+    db.vm.provision "shell", path: "provision/DB.sh", env: {
+      "DB_USER" => ENV['DB_USER'],
+      "DB_PASS" => ENV['DB_PASS'],
+      "DB_NAME" => ENV['DB_NAME']
+    }
+
+  end
+
+end
