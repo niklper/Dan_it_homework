@@ -1,0 +1,61 @@
+2026-05-01 09:58:01 INFO Service started name=auth-service version=1.4.2
+2026-05-01 09:58:05 INFO Service started name=api-gateway version=2.1.0
+2026-05-01 09:59:10 INFO Healthcheck passed service=auth-service
+2026-05-01 10:00:01 INFO User login user=admin ip=192.168.1.10
+2026-05-01 10:00:05 INFO User login user=john ip=192.168.1.20
+2026-05-01 10:00:07 WARNING Disk usage high value=78% mount=/var
+2026-05-01 10:00:10 INFO Request processed endpoint=/login status=200 duration=120ms
+2026-05-01 10:01:15 ERROR Database connection failed host=db01 retry=1
+2026-05-01 10:01:16 ERROR Database connection failed host=db01 retry=2
+2026-05-01 10:01:18 INFO Retry succeeded host=db01
+2026-05-01 10:02:00 INFO User logout user=admin
+2026-05-01 10:02:03 INFO Request processed endpoint=/logout status=200 duration=45ms
+2026-05-01 10:03:11 WARNING CPU usage high value=92% core=2
+2026-05-01 10:03:50 INFO User login user=alice ip=10.0.0.5
+2026-05-01 10:04:01 INFO Request processed endpoint=/users status=200 duration=210ms
+2026-05-01 10:04:33 ERROR Timeout while calling API endpoint=/users retries=3
+2026-05-01 10:05:00 INFO Scheduled job started name=backup
+2026-05-01 10:05:45 INFO Scheduled job finished name=backup duration=45s
+2026-05-01 10:06:10 WARNING Disk usage high value=85% mount=/data
+2026-05-01 10:06:30 INFO User login user=admin ip=192.168.1.10
+2026-05-01 10:06:35 INFO Request processed endpoint=/dashboard status=200 duration=300ms
+2026-05-01 10:07:01 ERROR Failed to send email user=john smtp=mail01
+2026-05-01 10:07:22 INFO Retry email success user=john
+2026-05-01 10:08:10 INFO User logout user=john
+2026-05-01 10:08:30 INFO User login user=bob ip=172.16.0.3
+2026-05-01 10:08:31 INFO Request processed endpoint=/login status=200 duration=110ms
+2026-05-01 10:09:05 WARNING Memory usage high value=88%
+2026-05-01 10:09:33 ERROR Unauthorized access attempt ip=203.0.113.5 endpoint=/admin
+2026-05-01 10:10:00 INFO User login user=carol ip=192.168.1.30
+2026-05-01 10:10:05 INFO Request processed endpoint=/profile status=200 duration=95ms
+2026-05-01 10:10:44 ERROR Timeout while calling API endpoint=/orders retries=2
+2026-05-01 10:11:20 INFO User logout user=alice
+2026-05-01 10:11:55 INFO Request processed endpoint=/orders status=200 duration=400ms
+2026-05-01 10:12:10 WARNING Disk usage high value=91% mount=/var
+2026-05-01 10:12:45 INFO User login user=admin ip=192.168.1.10
+2026-05-01 10:13:05 ERROR Database connection failed host=db02 retry=1
+2026-05-01 10:13:06 ERROR Database connection failed host=db02 retry=2
+2026-05-01 10:13:10 ERROR Database connection failed host=db02 retry=3
+2026-05-01 10:13:20 INFO Failover activated new_host=db03
+2026-05-01 10:14:01 INFO Request processed endpoint=/login status=200 duration=130ms
+2026-05-01 10:14:33 WARNING CPU usage high value=95% core=1
+2026-05-01 10:15:00 INFO User logout user=bob
+2026-05-01 10:15:23 INFO User login user=admin ip=192.168.1.10
+2026-05-01 10:16:01 ERROR Database connection failed host=db01
+2026-05-01 10:16:45 INFO User logout user=admin
+2026-05-01 10:17:10 WARNING Disk usage high value=85% mount=/var
+2026-05-01 10:18:02 ERROR Timeout while calling API endpoint=/users
+2026-05-01 10:18:30 INFO User login user=john ip=192.168.1.20
+2026-05-01 10:19:00 INFO Request processed endpoint=/login status=200 duration=100ms
+2026-05-01 10:19:20 WARNING Memory usage high value=90%
+2026-05-01 10:19:50 ERROR Failed to write to disk path=/data/logs/app.log
+2026-05-01 10:20:10 INFO User logout user=carol
+2026-05-01 10:20:30 INFO Cleanup started
+2026-05-01 10:20:50 INFO Cleanup finished duration=20s
+2026-05-01 10:21:05 ERROR Unauthorized access attempt ip=198.51.100.23 endpoint=/secure
+2026-05-01 10:21:30 INFO User login user=alice ip=10.0.0.5
+2026-05-01 10:22:00 INFO Request processed endpoint=/data status=200 duration=220ms
+2026-05-01 10:22:40 WARNING Disk usage high value=93% mount=/backup
+2026-05-01 10:23:10 ERROR Timeout while calling API endpoint=/reports retries=4
+2026-05-01 10:23:45 INFO User logout user=alice
+2026-05-01 10:24:00 INFO System idle
