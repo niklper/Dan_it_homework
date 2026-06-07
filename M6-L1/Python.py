@@ -100,7 +100,7 @@ command2 = requests.get(site + "/posts")
 #-------------------Task 5
 def task5():
     command5 = requests.get(site + "/users")
-    GEO_API_KEY = "69fb13dbb1590198246276wkb54354b"
+    GEO_API_KEY = "***"
     #print(command5.text)
     #print(command5.status_code)
     data5 = command5.json()
